@@ -9,6 +9,8 @@ import managementRoutes from "./routes/management.js"
 import salesRoutes from "./routes/sales.js"
 import mongoose from "mongoose"
 import config from "config"
+import User from "./models/User.js"
+import { dataUser } from "./data/index.js"
 
 const app = express()
 const port = config.get("mongodb.port")
@@ -32,5 +34,6 @@ mongoose
   .connect(URI)
   .then(() => {
     app.listen(port, () => console.log(`Server running on port: ${port}`))
+    // User.insertMany(dataUser)
   })
   .catch((e) => console.log(`${e} can't connect`))
