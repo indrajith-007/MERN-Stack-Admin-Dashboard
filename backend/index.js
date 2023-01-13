@@ -10,7 +10,9 @@ import salesRoutes from "./routes/sales.js"
 import mongoose from "mongoose"
 import config from "config"
 import User from "./models/User.js"
-import { dataUser } from "./data/index.js"
+import Product from "./models/Product.js"
+import ProductStat from "./models/ProductStat.js"
+import { dataUser, dataProduct, dataProductStat } from "./data/index.js"
 
 const app = express()
 const port = config.get("mongodb.port")
@@ -34,6 +36,9 @@ mongoose
   .connect(URI)
   .then(() => {
     app.listen(port, () => console.log(`Server running on port: ${port}`))
+
+    // Product.insertMany(dataProduct)
+    // ProductStat.insertMany(dataProductStat)
     // User.insertMany(dataUser)
   })
   .catch((e) => console.log(`${e} can't connect`))
