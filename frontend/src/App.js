@@ -13,6 +13,7 @@ import Geography from "./views/geography"
 import Overview from "./views/overview"
 import Daily from "./views/daily"
 import Monthly from "./views/montly"
+import Breakdown from "./views/breakdown"
 
 function App() {
   // @ts-ignore
@@ -35,6 +36,7 @@ function App() {
               <Route path="/overview" element={<Overview />} />
               <Route path="/daily" element={<Daily />} />
               <Route path="/monthly" element={<Monthly />} />
+              <Route path="/breakdown" element={<Breakdown />} />
             </Route>
           </Routes>
         </ThemeProvider>
