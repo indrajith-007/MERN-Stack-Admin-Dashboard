@@ -14,6 +14,8 @@ import Overview from "./views/overview"
 import Daily from "./views/daily"
 import Monthly from "./views/montly"
 import Breakdown from "./views/breakdown"
+import Admin from "./views/admin"
+import Performance from "./views/performance"
 
 function App() {
   // @ts-ignore
@@ -37,6 +39,8 @@ function App() {
               <Route path="/daily" element={<Daily />} />
               <Route path="/monthly" element={<Monthly />} />
               <Route path="/breakdown" element={<Breakdown />} />
+              <Route path="/admin" element={<Admin />} />
+              <Route path="/performance" element={<Performance />} />
             </Route>
           </Routes>
         </ThemeProvider>
