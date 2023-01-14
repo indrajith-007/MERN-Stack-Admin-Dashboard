@@ -11,6 +11,7 @@ import Customers from "./views/customers"
 import Transactions from "./views/transactions"
 import Geography from "./views/geography"
 import Overview from "./views/overview"
+import Daily from "./views/daily"
 
 function App() {
   // @ts-ignore
@@ -31,6 +32,7 @@ function App() {
               <Route path="/transactions" element={<Transactions />} />
               <Route path="/geography" element={<Geography />} />
               <Route path="/overview" element={<Overview />} />
+              <Route path="/daily" element={<Daily />} />
             </Route>
           </Routes>
         </ThemeProvider>
