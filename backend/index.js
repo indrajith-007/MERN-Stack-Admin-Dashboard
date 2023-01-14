@@ -8,7 +8,6 @@ import generalRoutes from "./routes/general.js"
 import managementRoutes from "./routes/management.js"
 import salesRoutes from "./routes/sales.js"
 import mongoose from "mongoose"
-import config from "config"
 import User from "./models/User.js"
 import Product from "./models/Product.js"
 import ProductStat from "./models/ProductStat.js"
@@ -23,10 +22,12 @@ import {
   dataOverallStat,
   dataAffiliateStat,
 } from "./data/index.js"
+import dotenv from "dotenv"
 
 const app = express()
-const port = config.get("mongodb.port")
-const URI = config.get("mongodb.uri")
+dotenv.config()
+const port = process.env.PORT
+const URI = process.env.MONGO_DB
 
 app.use(express.json())
 app.use(helmet())
@@ -43,7 +44,8 @@ app.use("/sales", salesRoutes)
 
 mongoose.set("strictQuery", false)
 mongoose
-  .connect(URI)
+  // @ts-ignore
+  .connect(process.env.MONGO_DB)
   .then(() => {
     app.listen(port, () => console.log(`Server running on port: ${port}`))
 
