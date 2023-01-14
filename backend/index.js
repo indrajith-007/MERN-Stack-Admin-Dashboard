@@ -13,11 +13,13 @@ import User from "./models/User.js"
 import Product from "./models/Product.js"
 import ProductStat from "./models/ProductStat.js"
 import Transaction from "./models/Transaction.js"
+import OverallStat from "./models/OverallStat.js"
 import {
   dataUser,
   dataProduct,
   dataProductStat,
   dataTransaction,
+  dataOverallStat,
 } from "./data/index.js"
 
 const app = express()
@@ -43,6 +45,7 @@ mongoose
   .then(() => {
     app.listen(port, () => console.log(`Server running on port: ${port}`))
 
+    // OverallStat.insertMany(dataOverallStat)
     // Transaction.insertMany(dataTransaction)
     // Product.insertMany(dataProduct)
     // ProductStat.insertMany(dataProductStat)
