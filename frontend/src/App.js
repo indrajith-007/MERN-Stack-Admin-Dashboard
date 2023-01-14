@@ -8,6 +8,7 @@ import Layout from "./views/layout"
 import Dashboard from "./views/dashboard"
 import Products from "./views/products"
 import Customers from "./views/customers"
+import Transactions from "./views/transactions"
 
 function App() {
   // @ts-ignore
@@ -25,6 +26,7 @@ function App() {
               <Route path="/dashboard" element={<Dashboard />} />
               <Route path="/products" element={<Products />} />
               <Route path="/customers" element={<Customers />} />
+              <Route path="/transactions" element={<Transactions />} />
             </Route>
           </Routes>
         </ThemeProvider>

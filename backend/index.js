@@ -12,7 +12,13 @@ import config from "config"
 import User from "./models/User.js"
 import Product from "./models/Product.js"
 import ProductStat from "./models/ProductStat.js"
-import { dataUser, dataProduct, dataProductStat } from "./data/index.js"
+import Transaction from "./models/Transaction.js"
+import {
+  dataUser,
+  dataProduct,
+  dataProductStat,
+  dataTransaction,
+} from "./data/index.js"
 
 const app = express()
 const port = config.get("mongodb.port")
@@ -37,6 +43,7 @@ mongoose
   .then(() => {
     app.listen(port, () => console.log(`Server running on port: ${port}`))
 
+    // Transaction.insertMany(dataTransaction)
     // Product.insertMany(dataProduct)
     // ProductStat.insertMany(dataProductStat)
     // User.insertMany(dataUser)
