@@ -9,6 +9,7 @@ import Dashboard from "./views/dashboard"
 import Products from "./views/products"
 import Customers from "./views/customers"
 import Transactions from "./views/transactions"
+import Geography from "./views/geography"
 
 function App() {
   // @ts-ignore
@@ -27,6 +28,7 @@ function App() {
               <Route path="/products" element={<Products />} />
               <Route path="/customers" element={<Customers />} />
               <Route path="/transactions" element={<Transactions />} />
+              <Route path="/geography" element={<Geography />} />
             </Route>
           </Routes>
         </ThemeProvider>
